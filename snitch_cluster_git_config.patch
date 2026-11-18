@@ -1,0 +1,20 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = /workspace/.bender/git/db/snitch_cluster-3438c359197cb3b0
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[submodule "sw/deps/printf"]
+	active = true
+	url = https://github.com/mpaland/printf.git
+[submodule "sw/deps/riscv-opcodes"]
+	active = true
+	url = https://github.com/pulp-platform/riscv-opcodes.git
+[submodule "sw/deps/riscv-tests"]
+	active = true
+	url = https://github.com/riscv-software-src/riscv-tests.git
+[submodule "target/asic/ihp13/pdk"]
+	active = true
+	url = http://github.com/IHP-GmbH/IHP-Open-PDK.git

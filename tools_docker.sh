@@ -1,0 +1,9 @@
+export WORKSPACE=`pwd`
+export SIM_BASE=/opt
+export LLVM_BINROOT=$WORKSPACE/tools/riscv32-snitch-llvm-ubuntu2204-15.0.0-snitch-0.5.0/bin/
+export SN_LLVM_BINROOT=$LLVM_BINROOT
+export PATH=$WORKSPACE/tools:$WORKSPACE/tools/riscv64/bin:$LLVM_BINROOT:$PATH
+export PATH=$SIM_BASE/questasim/linux_x86_64:$PATH
+export SALT_LICENSE_SERVER="/opt/questasim/license.dat"
+#export LM_LICENSE_FILE=$SIM_BASE/questasim/license.dat
+

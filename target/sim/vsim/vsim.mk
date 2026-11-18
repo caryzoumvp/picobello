@@ -10,6 +10,7 @@ VSIM_WORK = $(VSIM_DIR)/work
 
 VLOG_ARGS = -work $(VSIM_WORK)
 VLOG_ARGS += -suppress vlog-2583
+VLOG_ARGS += -suppress vlog-8386
 VLOG_ARGS += -suppress vlog-13314
 VLOG_ARGS += -suppress vlog-13233
 VLOG_ARGS += -timescale 1ns/1ps
@@ -46,7 +47,7 @@ vsim-compile: $(VSIM_DIR)/compile.tcl $(PB_HW_ALL)
 
 $(VSIM_DIR)/compile.tcl: $(BENDER_YML) $(BENDER_LOCK)
 	$(BENDER) script vsim --compilation-mode common $(COMMON_TARGS) $(SIM_TARGS) --vlog-arg="$(VLOG_ARGS)"> $@
-	echo 'vlog -work $(VSIM_WORK) "$(realpath $(CHS_ROOT))/target/sim/src/elfloader.cpp" -ccflags "-std=c++11"' >> $@
+	echo 'vlog -work $(VSIM_WORK) "$(realpath $(CHS_ROOT))/target/sim/src/elfloader.cpp" -ccflags "-std=c++11 -I/usr/include/x86_64-linux-gnu"' >> $@
 
 vsim-run:
 	cd $(SIM_DIR) && $(VSIM) $(VSIM_FLAGS) $(VSIM_FLAGS_GUI) $(TB_DUT) -do "log -r /*"

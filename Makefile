@@ -185,7 +185,7 @@ picobello-hw-clean: sn-hw-clean floo-clean
 	rm -rf $(PB_HW_ALL)
 
 clean: picobello-hw-clean
-	rm -rf $(BENDER_ROOT)
+	#rm -rf $(BENDER_ROOT)
 
 ############
 # Software #

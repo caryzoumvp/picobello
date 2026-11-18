@@ -1,0 +1,272 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="555" font-family="Arial,Helvetica,sans-serif">
+  <defs>
+    <filter id="sh">
+      <feDropShadow dx="1" dy="1" stdDeviation="1.5" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="920" height="555" fill="#0F172A"/>
+
+  <!-- Title -->
+  <text x="460" y="24" font-size="16" font-weight="bold" text-anchor="middle" fill="#F1F5F9">picobello SoC — FlooNoC 7×4 Mesh Architecture</text>
+  <text x="460" y="41" font-size="9.5" text-anchor="middle" fill="#94A3B8">Narrow 64-bit + Wide 512-bit AXI4  ·  XY Routing  ·  Collective Ops: Multicast / Barrier / Reduction</text>
+
+  <!-- ── Column group labels ── -->
+  <text x="74" y="57" font-size="9" font-weight="bold" text-anchor="middle" fill="#4ADE80">L2 SPM</text>
+  <!-- cluster array bracket -->
+  <line x1="150" y1="60" x2="582" y2="60" stroke="#60A5FA" stroke-width="1.5"/>
+  <line x1="150" y1="57" x2="150" y2="63" stroke="#60A5FA" stroke-width="1.5"/>
+  <line x1="582" y1="57" x2="582" y2="63" stroke="#60A5FA" stroke-width="1.5"/>
+  <text x="366" y="56" font-size="9" font-weight="bold" text-anchor="middle" fill="#60A5FA">4 × 4 Snitch Cluster Array  (16 tiles · 9 cores each · 144 RV32 cores total)</text>
+  <text x="654" y="57" font-size="9" font-weight="bold" text-anchor="middle" fill="#4ADE80">L2 SPM</text>
+  <text x="770" y="57" font-size="9" font-weight="bold" text-anchor="middle" fill="#C084FC">I/O &amp; Ctrl</text>
+
+  <!-- ══════════════════════════════════════
+       NoC MESH LINKS  (gray = narrow+wide)
+       col_stride=116  tile_w=88  h_gap=28
+       row_stride=76   tile_h=50  v_gap=26
+       tile_x(c)=30+c*116   tile_y(r)=70+(3-r)*76
+       link_y(r)=95+(3-r)*76   link_x(c)=74+c*116
+       horiz right_edge=118+c*116  left_next=146+c*116
+       vert bottom=120+(3-r)*76   top_next=146+(3-r)*76  (next row down = r-1)
+       Between r3-r2: 120→146   r2-r1: 196→222   r1-r0: 272→298
+       ══════════════════════════════════════ -->
+
+  <!-- Horizontal links row r=3 y=95 -->
+  <line x1="118" y1="95"  x2="146" y2="95"  stroke="#475569" stroke-width="3"/>
+  <line x1="234" y1="95"  x2="262" y2="95"  stroke="#475569" stroke-width="3"/>
+  <line x1="350" y1="95"  x2="378" y2="95"  stroke="#475569" stroke-width="3"/>
+  <line x1="466" y1="95"  x2="494" y2="95"  stroke="#475569" stroke-width="3"/>
+  <line x1="582" y1="95"  x2="610" y2="95"  stroke="#475569" stroke-width="3"/>
+  <line x1="698" y1="95"  x2="726" y2="95"  stroke="#475569" stroke-width="3"/>
+  <!-- Horizontal links row r=2 y=171 -->
+  <line x1="118" y1="171" x2="146" y2="171" stroke="#475569" stroke-width="3"/>
+  <line x1="234" y1="171" x2="262" y2="171" stroke="#475569" stroke-width="3"/>
+  <line x1="350" y1="171" x2="378" y2="171" stroke="#475569" stroke-width="3"/>
+  <line x1="466" y1="171" x2="494" y2="171" stroke="#475569" stroke-width="3"/>
+  <line x1="582" y1="171" x2="610" y2="171" stroke="#475569" stroke-width="3"/>
+  <line x1="698" y1="171" x2="726" y2="171" stroke="#475569" stroke-width="3"/>
+  <!-- Horizontal links row r=1 y=247 -->
+  <line x1="118" y1="247" x2="146" y2="247" stroke="#475569" stroke-width="3"/>
+  <line x1="234" y1="247" x2="262" y2="247" stroke="#475569" stroke-width="3"/>
+  <line x1="350" y1="247" x2="378" y2="247" stroke="#475569" stroke-width="3"/>
+  <line x1="466" y1="247" x2="494" y2="247" stroke="#475569" stroke-width="3"/>
+  <line x1="582" y1="247" x2="610" y2="247" stroke="#475569" stroke-width="3"/>
+  <line x1="698" y1="247" x2="726" y2="247" stroke="#475569" stroke-width="3"/>
+  <!-- Horizontal links row r=0 y=323 -->
+  <line x1="118" y1="323" x2="146" y2="323" stroke="#475569" stroke-width="3"/>
+  <line x1="234" y1="323" x2="262" y2="323" stroke="#475569" stroke-width="3"/>
+  <line x1="350" y1="323" x2="378" y2="323" stroke="#475569" stroke-width="3"/>
+  <line x1="466" y1="323" x2="494" y2="323" stroke="#475569" stroke-width="3"/>
+  <line x1="582" y1="323" x2="610" y2="323" stroke="#475569" stroke-width="3"/>
+  <line x1="698" y1="323" x2="726" y2="323" stroke="#475569" stroke-width="3"/>
+
+  <!-- Vertical links col c=0 x=74 -->
+  <line x1="74" y1="120" x2="74" y2="146" stroke="#475569" stroke-width="3"/>
+  <line x1="74" y1="196" x2="74" y2="222" stroke="#475569" stroke-width="3"/>
+  <line x1="74" y1="272" x2="74" y2="298" stroke="#475569" stroke-width="3"/>
+  <!-- c=1 x=190 -->
+  <line x1="190" y1="120" x2="190" y2="146" stroke="#475569" stroke-width="3"/>
+  <line x1="190" y1="196" x2="190" y2="222" stroke="#475569" stroke-width="3"/>
+  <line x1="190" y1="272" x2="190" y2="298" stroke="#475569" stroke-width="3"/>
+  <!-- c=2 x=306 -->
+  <line x1="306" y1="120" x2="306" y2="146" stroke="#475569" stroke-width="3"/>
+  <line x1="306" y1="196" x2="306" y2="222" stroke="#475569" stroke-width="3"/>
+  <line x1="306" y1="272" x2="306" y2="298" stroke="#475569" stroke-width="3"/>
+  <!-- c=3 x=422 -->
+  <line x1="422" y1="120" x2="422" y2="146" stroke="#475569" stroke-width="3"/>
+  <line x1="422" y1="196" x2="422" y2="222" stroke="#475569" stroke-width="3"/>
+  <line x1="422" y1="272" x2="422" y2="298" stroke="#475569" stroke-width="3"/>
+  <!-- c=4 x=538 -->
+  <line x1="538" y1="120" x2="538" y2="146" stroke="#475569" stroke-width="3"/>
+  <line x1="538" y1="196" x2="538" y2="222" stroke="#475569" stroke-width="3"/>
+  <line x1="538" y1="272" x2="538" y2="298" stroke="#475569" stroke-width="3"/>
+  <!-- c=5 x=654 -->
+  <line x1="654" y1="120" x2="654" y2="146" stroke="#475569" stroke-width="3"/>
+  <line x1="654" y1="196" x2="654" y2="222" stroke="#475569" stroke-width="3"/>
+  <line x1="654" y1="272" x2="654" y2="298" stroke="#475569" stroke-width="3"/>
+  <!-- c=6 x=770 -->
+  <line x1="770" y1="120" x2="770" y2="146" stroke="#475569" stroke-width="3"/>
+  <line x1="770" y1="196" x2="770" y2="222" stroke="#475569" stroke-width="3"/>
+  <line x1="770" y1="272" x2="770" y2="298" stroke="#475569" stroke-width="3"/>
+
+  <!-- ══════════════════════════════════════
+       TILES
+       tile_x(c)=30+c*116   tile_y(r)=70+(3-r)*76
+       c:  30  146  262  378  494  610  726
+       r3: 70   r2:146   r1:222   r0:298
+       tile_w=88  tile_h=50
+       ══════════════════════════════════════ -->
+
+  <!-- ── Col 0: L2 SPM 0-3 (green) ── -->
+  <rect x="30"  y="70"  width="88" height="50" rx="5" fill="#16A34A" stroke="#4ADE80" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="74"  y="91"  font-size="10" font-weight="bold" text-anchor="middle" fill="white">L2 SPM 3</text>
+  <text x="74"  y="106" font-size="8"  text-anchor="middle" fill="#86EFAC">0x7030_0000</text>
+
+  <rect x="30"  y="146" width="88" height="50" rx="5" fill="#16A34A" stroke="#4ADE80" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="74"  y="167" font-size="10" font-weight="bold" text-anchor="middle" fill="white">L2 SPM 2</text>
+  <text x="74"  y="182" font-size="8"  text-anchor="middle" fill="#86EFAC">0x7020_0000</text>
+
+  <rect x="30"  y="222" width="88" height="50" rx="5" fill="#16A34A" stroke="#4ADE80" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="74"  y="243" font-size="10" font-weight="bold" text-anchor="middle" fill="white">L2 SPM 1</text>
+  <text x="74"  y="258" font-size="8"  text-anchor="middle" fill="#86EFAC">0x7010_0000</text>
+
+  <rect x="30"  y="298" width="88" height="50" rx="5" fill="#16A34A" stroke="#4ADE80" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="74"  y="319" font-size="10" font-weight="bold" text-anchor="middle" fill="white">L2 SPM 0</text>
+  <text x="74"  y="334" font-size="8"  text-anchor="middle" fill="#86EFAC">0x7000_0000</text>
+
+  <!-- ── Col 1: Cluster[0,y] (blue) ── -->
+  <rect x="146" y="70"  width="88" height="50" rx="5" fill="#1D4ED8" stroke="#60A5FA" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="190" y="91"  font-size="10" font-weight="bold" text-anchor="middle" fill="white">Snitch</text>
+  <text x="190" y="106" font-size="8"  text-anchor="middle" fill="#93C5FD">[0, 3]  0x200C0000</text>
+
+  <rect x="146" y="146" width="88" height="50" rx="5" fill="#1D4ED8" stroke="#60A5FA" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="190" y="167" font-size="10" font-weight="bold" text-anchor="middle" fill="white">Snitch</text>
+  <text x="190" y="182" font-size="8"  text-anchor="middle" fill="#93C5FD">[0, 2]  0x2008_0000</text>
+
+  <rect x="146" y="222" width="88" height="50" rx="5" fill="#1D4ED8" stroke="#60A5FA" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="190" y="243" font-size="10" font-weight="bold" text-anchor="middle" fill="white">Snitch</text>
+  <text x="190" y="258" font-size="8"  text-anchor="middle" fill="#93C5FD">[0, 1]  0x2004_0000</text>
+
+  <rect x="146" y="298" width="88" height="50" rx="5" fill="#1D4ED8" stroke="#60A5FA" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="190" y="319" font-size="10" font-weight="bold" text-anchor="middle" fill="white">Snitch</text>
+  <text x="190" y="334" font-size="8"  text-anchor="middle" fill="#93C5FD">[0, 0]  0x2000_0000</text>
+
+  <!-- ── Col 2: Cluster[1,y] ── -->
+  <rect x="262" y="70"  width="88" height="50" rx="5" fill="#1D4ED8" stroke="#60A5FA" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="306" y="91"  font-size="10" font-weight="bold" text-anchor="middle" fill="white">Snitch</text>
+  <text x="306" y="106" font-size="8"  text-anchor="middle" fill="#93C5FD">[1, 3]  0x201C_0000</text>
+
+  <rect x="262" y="146" width="88" height="50" rx="5" fill="#1D4ED8" stroke="#60A5FA" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="306" y="167" font-size="10" font-weight="bold" text-anchor="middle" fill="white">Snitch</text>
+  <text x="306" y="182" font-size="8"  text-anchor="middle" fill="#93C5FD">[1, 2]  0x2018_0000</text>
+
+  <rect x="262" y="222" width="88" height="50" rx="5" fill="#1D4ED8" stroke="#60A5FA" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="306" y="243" font-size="10" font-weight="bold" text-anchor="middle" fill="white">Snitch</text>
+  <text x="306" y="258" font-size="8"  text-anchor="middle" fill="#93C5FD">[1, 1]  0x2014_0000</text>
+
+  <rect x="262" y="298" width="88" height="50" rx="5" fill="#1D4ED8" stroke="#60A5FA" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="306" y="319" font-size="10" font-weight="bold" text-anchor="middle" fill="white">Snitch</text>
+  <text x="306" y="334" font-size="8"  text-anchor="middle" fill="#93C5FD">[1, 0]  0x2010_0000</text>
+
+  <!-- ── Col 3: Cluster[2,y] ── -->
+  <rect x="378" y="70"  width="88" height="50" rx="5" fill="#1D4ED8" stroke="#60A5FA" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="422" y="91"  font-size="10" font-weight="bold" text-anchor="middle" fill="white">Snitch</text>
+  <text x="422" y="106" font-size="8"  text-anchor="middle" fill="#93C5FD">[2, 3]  0x202C_0000</text>
+
+  <rect x="378" y="146" width="88" height="50" rx="5" fill="#1D4ED8" stroke="#60A5FA" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="422" y="167" font-size="10" font-weight="bold" text-anchor="middle" fill="white">Snitch</text>
+  <text x="422" y="182" font-size="8"  text-anchor="middle" fill="#93C5FD">[2, 2]  0x2028_0000</text>
+
+  <rect x="378" y="222" width="88" height="50" rx="5" fill="#1D4ED8" stroke="#60A5FA" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="422" y="243" font-size="10" font-weight="bold" text-anchor="middle" fill="white">Snitch</text>
+  <text x="422" y="258" font-size="8"  text-anchor="middle" fill="#93C5FD">[2, 1]  0x2024_0000</text>
+
+  <rect x="378" y="298" width="88" height="50" rx="5" fill="#1D4ED8" stroke="#60A5FA" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="422" y="319" font-size="10" font-weight="bold" text-anchor="middle" fill="white">Snitch</text>
+  <text x="422" y="334" font-size="8"  text-anchor="middle" fill="#93C5FD">[2, 0]  0x2020_0000</text>
+
+  <!-- ── Col 4: Cluster[3,y] ── -->
+  <rect x="494" y="70"  width="88" height="50" rx="5" fill="#1D4ED8" stroke="#60A5FA" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="538" y="91"  font-size="10" font-weight="bold" text-anchor="middle" fill="white">Snitch</text>
+  <text x="538" y="106" font-size="8"  text-anchor="middle" fill="#93C5FD">[3, 3]  0x203C_0000</text>
+
+  <rect x="494" y="146" width="88" height="50" rx="5" fill="#1D4ED8" stroke="#60A5FA" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="538" y="167" font-size="10" font-weight="bold" text-anchor="middle" fill="white">Snitch</text>
+  <text x="538" y="182" font-size="8"  text-anchor="middle" fill="#93C5FD">[3, 2]  0x2038_0000</text>
+
+  <rect x="494" y="222" width="88" height="50" rx="5" fill="#1D4ED8" stroke="#60A5FA" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="538" y="243" font-size="10" font-weight="bold" text-anchor="middle" fill="white">Snitch</text>
+  <text x="538" y="258" font-size="8"  text-anchor="middle" fill="#93C5FD">[3, 1]  0x2034_0000</text>
+
+  <rect x="494" y="298" width="88" height="50" rx="5" fill="#1D4ED8" stroke="#60A5FA" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="538" y="319" font-size="10" font-weight="bold" text-anchor="middle" fill="white">Snitch</text>
+  <text x="538" y="334" font-size="8"  text-anchor="middle" fill="#93C5FD">[3, 0]  0x2030_0000</text>
+
+  <!-- ── Col 5: L2 SPM 4-7 ── -->
+  <rect x="610" y="70"  width="88" height="50" rx="5" fill="#16A34A" stroke="#4ADE80" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="654" y="91"  font-size="10" font-weight="bold" text-anchor="middle" fill="white">L2 SPM 7</text>
+  <text x="654" y="106" font-size="8"  text-anchor="middle" fill="#86EFAC">0x7070_0000</text>
+
+  <rect x="610" y="146" width="88" height="50" rx="5" fill="#16A34A" stroke="#4ADE80" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="654" y="167" font-size="10" font-weight="bold" text-anchor="middle" fill="white">L2 SPM 6</text>
+  <text x="654" y="182" font-size="8"  text-anchor="middle" fill="#86EFAC">0x7060_0000</text>
+
+  <rect x="610" y="222" width="88" height="50" rx="5" fill="#16A34A" stroke="#4ADE80" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="654" y="243" font-size="10" font-weight="bold" text-anchor="middle" fill="white">L2 SPM 5</text>
+  <text x="654" y="258" font-size="8"  text-anchor="middle" fill="#86EFAC">0x7050_0000</text>
+
+  <rect x="610" y="298" width="88" height="50" rx="5" fill="#16A34A" stroke="#4ADE80" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="654" y="319" font-size="10" font-weight="bold" text-anchor="middle" fill="white">L2 SPM 4</text>
+  <text x="654" y="334" font-size="8"  text-anchor="middle" fill="#86EFAC">0x7040_0000</text>
+
+  <!-- ── Col 6: I/O + Ctrl tiles ── -->
+  <!-- Cheshire (CVA6 host) -->
+  <rect x="726" y="70"  width="88" height="50" rx="5" fill="#C2410C" stroke="#FB923C" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="770" y="91"  font-size="10" font-weight="bold" text-anchor="middle" fill="white">Cheshire</text>
+  <text x="770" y="106" font-size="8"  text-anchor="middle" fill="#FDBA74">CVA6  0x0000_0000</text>
+
+  <!-- SPM Narrow -->
+  <rect x="726" y="146" width="88" height="50" rx="5" fill="#6D28D9" stroke="#C084FC" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="770" y="167" font-size="10" font-weight="bold" text-anchor="middle" fill="white">SPM</text>
+  <text x="770" y="182" font-size="8"  text-anchor="middle" fill="#D8B4FE">Narrow  0x6000_0000</text>
+
+  <!-- SPM Wide -->
+  <rect x="726" y="222" width="88" height="50" rx="5" fill="#6D28D9" stroke="#C084FC" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="770" y="243" font-size="10" font-weight="bold" text-anchor="middle" fill="white">SPM</text>
+  <text x="770" y="258" font-size="8"  text-anchor="middle" fill="#D8B4FE">Wide    0x6004_0000</text>
+
+  <!-- FhG SPU -->
+  <rect x="726" y="298" width="88" height="50" rx="5" fill="#B91C1C" stroke="#F87171" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="770" y="319" font-size="10" font-weight="bold" text-anchor="middle" fill="white">FhG SPU</text>
+  <text x="770" y="334" font-size="8"  text-anchor="middle" fill="#FCA5A5">0x4000_0000</text>
+
+  <!-- ══════════════════════════════════════
+       Physical mesh axis labels
+       ══════════════════════════════════════ -->
+  <!-- Y axis (physical row, left side) -->
+  <text x="16" y="99"  font-size="8.5" text-anchor="middle" fill="#94A3B8" font-style="italic">y=3</text>
+  <text x="16" y="175" font-size="8.5" text-anchor="middle" fill="#94A3B8" font-style="italic">y=2</text>
+  <text x="16" y="251" font-size="8.5" text-anchor="middle" fill="#94A3B8" font-style="italic">y=1</text>
+  <text x="16" y="327" font-size="8.5" text-anchor="middle" fill="#94A3B8" font-style="italic">y=0</text>
+  <!-- X axis (physical col, bottom) -->
+  <text x="74"  y="362" font-size="8.5" text-anchor="middle" fill="#94A3B8" font-style="italic">x=0</text>
+  <text x="190" y="362" font-size="8.5" text-anchor="middle" fill="#94A3B8" font-style="italic">x=1</text>
+  <text x="306" y="362" font-size="8.5" text-anchor="middle" fill="#94A3B8" font-style="italic">x=2</text>
+  <text x="422" y="362" font-size="8.5" text-anchor="middle" fill="#94A3B8" font-style="italic">x=3</text>
+  <text x="538" y="362" font-size="8.5" text-anchor="middle" fill="#94A3B8" font-style="italic">x=4</text>
+  <text x="654" y="362" font-size="8.5" text-anchor="middle" fill="#94A3B8" font-style="italic">x=5</text>
+  <text x="770" y="362" font-size="8.5" text-anchor="middle" fill="#94A3B8" font-style="italic">x=6</text>
+
+  <!-- ══════════════════════════════════════
+       LEGEND
+       ══════════════════════════════════════ -->
+  <rect x="30" y="376" width="860" height="98" rx="6" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+  <text x="460" y="391" font-size="9.5" font-weight="bold" text-anchor="middle" fill="#F1F5F9">Legend</text>
+
+  <!-- Cluster -->
+  <rect x="50"  y="398" width="18" height="14" rx="2" fill="#1D4ED8" stroke="#60A5FA" stroke-width="1"/>
+  <text x="72"  y="409" font-size="9" fill="#CBD5E1">Snitch Cluster Tile  — labeled "Snitch" in diagram  (9 RV32 cores + DMA, 256 KB TCDM)</text>
+  <!-- L2 SPM -->
+  <rect x="50"  y="418" width="18" height="14" rx="2" fill="#16A34A" stroke="#4ADE80" stroke-width="1"/>
+  <text x="72"  y="429" font-size="9" fill="#CBD5E1">L2 SPM Tile  (1 MB scratchpad, 8 tiles = 8 MB total)</text>
+  <!-- Cheshire -->
+  <rect x="50"  y="438" width="18" height="14" rx="2" fill="#C2410C" stroke="#FB923C" stroke-width="1"/>
+  <text x="72"  y="449" font-size="9" fill="#CBD5E1">Cheshire Tile  — top-right corner (x=6)  (CVA6 64-bit host CPU, JTAG, UART, SPI, I2C, LLC)</text>
+  <!-- SPM -->
+  <rect x="370" y="398" width="18" height="14" rx="2" fill="#6D28D9" stroke="#C084FC" stroke-width="1"/>
+  <text x="392" y="409" font-size="9" fill="#CBD5E1">SPM Narrow/Wide Tile  (top-level scratchpad, 256 KB each)</text>
+  <!-- FhG SPU -->
+  <rect x="370" y="418" width="18" height="14" rx="2" fill="#B91C1C" stroke="#F87171" stroke-width="1"/>
+  <text x="392" y="429" font-size="9" fill="#CBD5E1">FhG SPU Tile  (accelerator, 256 KB)</text>
+  <!-- NoC link -->
+  <line x1="370" y1="447" x2="388" y2="447" stroke="#64748B" stroke-width="3"/>
+  <text x="392" y="451" font-size="9" fill="#CBD5E1">FlooNoC Link  (bidirectional: Narrow 64-bit AXI4 + Wide 512-bit AXI4)</text>
+
+  <!-- Logical-to-physical X note -->
+  <text x="30" y="488" font-size="8.5" fill="#64748B">Logical X offset: clusters start at logical x=4 (power-of-two multicast alignment); picobello_pkg.sv::SamPhysical collapses empty cols 1–3 → 7×4 physical mesh.</text>
+  <text x="30" y="503" font-size="8.5" fill="#64748B">Software: Cheshire (CVA6) boots via JTAG, loads binaries, offloads kernels to Snitch clusters over the NoC; results land in L2 SPM tiles.</text>
+  <text x="30" y="518" font-size="8.5" fill="#64748B">Collective ops use AXI4 USER field bits for multicast mask (48-bit) + collective opcode (4-bit); FlooNoC handles in-network reduction/barrier/multicast without CPU involvement.</text>
+  <text x="30" y="533" font-size="8.5" fill="#64748B">Generated files: .generated/floo_picobello_noc_pkg.sv (from cfg/picobello_noc.yml), snitch_cluster_wrapper.sv, pb_soc_regs.sv.  Regenerate with: make floo-clean floo-hw-all  or  make all</text>
+</svg>
